@@ -9,10 +9,10 @@ spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "*"
+    - hosts:
+        - "*"
+      port:
+        number: 80
+        name: http
+        protocol: HTTP
     

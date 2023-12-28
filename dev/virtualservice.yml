@@ -1,12 +1,13 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: hello-vs
+  namespace: hello-app
 spec:
-  hosts:
-  - testapp.cloudautomate.in
   gateways:
-  - gateway-internal
+    - gateway-internal
+  hosts:
+    - testapp.cloudautomate.in
   http:
   - match:
     - uri:
@@ -15,7 +16,7 @@ spec:
     - destination:
         host: raja.hello-app.svc.cluster.local
         port:
-          number: 80
+          number: 8080
 
     
   
